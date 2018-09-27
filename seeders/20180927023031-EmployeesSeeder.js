@@ -12,6 +12,28 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
+    return queryInterface.bulkInsert('Employees', [{
+      firstName: "Wika",
+      lastName: "Silo",
+      email: "wikasilo@hacktiv8.com",
+      totalPoints: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      firstName: "Awtian",
+      lastName: "Akbar",
+      email: "awtianakbar@hacktiv8.com",
+      totalPoints: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      firstName: "Semmi",
+      lastName: "Verian",
+      email: "semmiverian@hacktiv8.com",
+      totalPoints: 2,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }], {});
   },
 
   down: (queryInterface, Sequelize) => {
@@ -22,5 +44,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('Person', null, {});
     */
+    return queryInterface.bulkDelete('Employees', null, {});
   }
 };
