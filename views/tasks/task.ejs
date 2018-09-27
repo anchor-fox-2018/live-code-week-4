@@ -9,14 +9,13 @@
 </head>
 
 <body>
-    <header>
-        <h1>Performance Logs</h1>
+    <h1>Performance Logs</h1>
 
-        <div>
-            <a href="/">Home</a>
-            <a href="employees">Employees</a>
-            <a href="tasks">Tasks</a>
-        </div>
+    <div>
+        <a href="/">Home</a>
+        <a href="employees">Employees</a>
+        <a href="tasks">Tasks</a>
+    </div>
     </header>
 
     <% if (typeof err !== "undefined") { %>
@@ -26,41 +25,41 @@
         <% } %>
 
             <div>
-                <h1>Employees</h1>
-                <a href="add-employee.ejs"><button>Add An Employee</button></a>
+                <h1>Tasks</h1>
+                <a href="add-tasks.ejs"><button>Add a Task</button></a>
                 <table>
                     <tr>
                         <td>Id</td>
-                        <td>First Name</td>
-                        <td>Last Name</td>
-                        <td>Email</td>
-                        <td>Total Points</td>
-                        <td>Joined</td>
+                        <td>Title</td>
+                        <td>Description</td>
+                        <td>Points</td>
+                        <td>Employee Name</td>
+                        <td>Status</td>
                         <td>Actions</td>
                     </tr>
-                    <% employees.forEach(employee => { %>
+                    <% tasks.forEach(task => { %>
                         <tr>
                             <td>
-                                <%= employee.id %>
+                                <%= task.id %>
                             </td>
                             <td>
-                                <%= employee.fistName %>
+                                <%= task.title %>
                             </td>
                             <td>
-                                <%= employee.lastName %>
+                                <%= task.description %>
                             </td>
                             <td>
-                                <%= employee.email %>
+                                <%= task.points %>
                             </td>
                             <td>
-                                <%= employee.totalPoints %>
+                                <%= task.Employee.firstName %>
                             </td>
                             <td>
-                                <%= employee.createdAt %>
+                                <%= task.isCompleted %>
                             </td>
                             <td>
-                                <a href="employees/<%= employee.id %>/edit"><button>Edit</button></a>
-                                <a href="employees/<%= employee.id %>/delete"><button>Delete</button></a>
+                                <a href="tasks/<%= task.id %>/mark-as-completed"><button>Mark as completed</button></a>
+                                <a href="tasks/<%= task.id %>/delete"><button>Delete</button></a>
                             </td>
                         </tr>
 

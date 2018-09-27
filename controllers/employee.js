@@ -38,7 +38,9 @@ class Controller {
                 email
             })
             .then(data => res.redirect('employees/employee'))
-            .catch(err => console.log(err))
+            .catch(err => res.render('employees/add-employee', {
+                err
+            }))
     }
 
     static edit(req, res) {
@@ -57,7 +59,9 @@ class Controller {
                 }
             })
             .then(data => res.redirect('employees/employee'))
-            .catch(err => console.log(err))
+            .catch(err => res.render('employees/edit-employee', {
+                err
+            }))
     }
 
     static delete(req, res) {
@@ -66,6 +70,11 @@ class Controller {
                     id: req.params.id
                 }
             })
+            .then(() => Model.Task.destroy({
+                where: {
+                    EmployeeId: id
+                }
+            }))
             .then(data => res.redirect('employees/employee'))
             .catch(err => console.log(err))
     }
