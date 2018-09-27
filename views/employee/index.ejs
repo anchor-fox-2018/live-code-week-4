@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Employees</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Employees</h1>
+    <br>
+    <button><a href="/employees/add">Add New Employee</a></button>
+
+    <table border="1">
+        <thead>
+            <th>id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>email</th>
+            <th>total points</th>
+            <th>joined</th>
+            <th>actions</th>            
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < employees.length; i++) { %>
+                <tr>
+                    <td><%= employees[i].id  %></td>
+                    <td><%= employees[i].firstName %></td>
+                    <td><%= employees[i].lastName %></td>
+                    <td><%= employees[i].email %></td>
+                    <td><%= employees[i].totalPoints %></td>
+                    <td><%= employees[i].createdAt %></td>
+                    <td><button><a href="/employees/<%= employees[i].id%>/edit">edit</a></button>
+                        <button><a href="/employees/<%= employees[i].id%>/delete">delete</a></button></td>
+                </tr>
+           <% } %>
+            <td></td>
+        </tbody>
+    </table>
+</body>
+</html>
