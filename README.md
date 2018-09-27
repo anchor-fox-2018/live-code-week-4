@@ -23,7 +23,7 @@ Buat semua *migration* yang diperlukan oleh aplikasi ini:
 - Employees
   - `firstName (string)`
   - `lastName (string)`
-  - `email (boolean)`
+  - `email (string)`
 
 - Tasks
   - `title (string)`
