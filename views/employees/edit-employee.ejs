@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Performance Logs</title>
+</head>
+
+<body>
+    <header>
+        <h1>Performance Logs</h1>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="employees">Employees</a>
+            <a href="/">Tasks</a>
+        </div>
+    </header>
+
+    <h1>Edit an Employee</h1>
+
+    <form action="/employees/<%= employee.id %>/edit" method="POST">
+        <div>
+            <label for="firstName">First Name</label><br>
+            <input type="text" name="firstName" value="<%= employee.firstName %>" placeholder="Enter first name">
+        </div>
+        <div>
+            <label for="lastName">Last Name</label><br>
+            <input type="text" name="lastName" value="<%= employee.lastName %>" placeholder="Enter last name">
+        </div>
+        <div>
+            <label for="email">Email</label><br>
+            <input type="text" name="email" value="<%= employee.email %>" placeholder="Enter email"><br>
+            <small>We'll never share your email with anyone else! 😉</small>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="cancel"> <a href="/employees">Cancel</a></button></a>
+    </form>
+</body>
+
+</html>
