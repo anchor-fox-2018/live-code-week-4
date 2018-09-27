@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Performance Logs</title>
+</head>
+
+<body>
+    <h1>Performance Logs</h1>
+
+    <div>
+        <a href="/">Home</a>
+        <a href="employees">Employees</a>
+        <a href="tasks">Tasks</a>
+    </div>
+    </header>
+
+    <% if (typeof err !== "undefined") { %>
+        <h2>
+            <%= err %>
+        </h2>
+        <% } %>
+
+            <div>
+                <h1>Tasks</h1>
+                <a href="tasks/add"><button>Add a Task</button></a>
+                <table>
+                    <tr>
+                        <td>Id</td>
+                        <td>Title</td>
+                        <td>Description</td>
+                        <td>Points</td>
+                        <td>Employee Name</td>
+                        <td>Status</td>
+                        <td>Actions</td>
+                    </tr>
+                    <% tasks.forEach(task => { %>
+                        <tr>
+                            <td>
+                                <%= task.id %>
+                            </td>
+                            <td>
+                                <%= task.title %>
+                            </td>
+                            <td>
+                                <%= task.description %>
+                            </td>
+                            <td>
+                                <%= task.points %>
+                            </td>
+                            <td>
+                                <%= task.Employee.firstName %>
+                            </td>
+                            <td>
+                                <%= task.isCompleted %>
+                            </td>
+                            <td>
+                                <a href="tasks/<%= task.id %>/mark-as-completed"><button>Mark as completed</button></a>
+                                <a href="tasks/<%= task.id %>/delete"><button>Delete</button></a>
+                            </td>
+                        </tr>
+
+                        <% }) %>
+
+                </table>
+            </div>
+
+</body>
+
+</html>

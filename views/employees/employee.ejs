@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Performance Logs</title>
+</head>
+
+<body>
+    <header>
+        <h1>Performance Logs</h1>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="employees">Employees</a>
+            <a href="tasks">Tasks</a>
+        </div>
+    </header>
+
+    <% if (typeof err !== "undefined") { %>
+        <h2>
+            <%= err %>
+        </h2>
+        <% } %>
+
+            <div>
+                <h1>Employees</h1>
+                <a href="/employee/add"><button>Add An Employee</button></a>
+                <table>
+                    <tr>
+                        <td>Id</td>
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                        <td>Email</td>
+                        <td>Total Points</td>
+                        <td>Joined</td>
+                        <td>Actions</td>
+                    </tr>
+                    <% employees.forEach(employee => { %>
+                        <tr>
+                            <td>
+                                <%= employee.id %>
+                            </td>
+                            <td>
+                                <%= employee.fistName %>
+                            </td>
+                            <td>
+                                <%= employee.lastName %>
+                            </td>
+                            <td>
+                                <%= employee.email %>
+                            </td>
+                            <td>
+                                <%= employee.totalPoints %>
+                            </td>
+                            <td>
+                                <%= employee.createdAt %>
+                            </td>
+                            <td>
+                                <a href="employees/<%= employee.id %>/edit"><button>Edit</button></a>
+                                <a href="employees/<%= employee.id %>/delete"><button>Delete</button></a>
+                            </td>
+                        </tr>
+
+                        <% }) %>
+
+                </table>
+            </div>
+
+</body>
+
+</html>
