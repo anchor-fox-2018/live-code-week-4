@@ -17,6 +17,10 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
+      totalPoints: {
+        type: Sequelize.INTEGER,
+        defaultvalue: 0
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     email: {
       type: DataTypes.STRING
+    },
+    totalPoints: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
     }
   }, {});
   Employees.associate = function (models) {
