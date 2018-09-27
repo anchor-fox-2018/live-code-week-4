@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Performance Logs</title>
+</head>
+
+<body>
+    <header>
+        <h1>Performance Logs</h1>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="employees">Employees</a>
+            <a href="tasks">Tasks</a>
+        </div>
+    </header>
+
+    <h1>Add a Task</h1>
+
+    <% if (typeof err !== "undefined") { %>
+        <h2>
+            <%= err %>
+        </h2>
+        <% } %>
+
+            <form action="/tasks/add" method="POST">
+                <div>
+                    <label for="title">Title</label><br>
+                    <input type="text" name="title" value="" placeholder="Enter title">
+                </div>
+                <div>
+                    <label for="description">Description</label><br>
+                    <input type="text" name="description" value="" placeholder="Enter description">
+                </div>
+                <div>
+                    <label for="points">Points</label><br>
+                    <input type="text" name="points" value="" placeholder="Enter points"> <br>
+                    <small>Enter the reward (points) for completing this task! 😉</small>
+                </div>
+                <div>
+                    <label for="addEmployee">Employee Name</label><br>
+                    <select name="EmployeeId">
+        <% employees.forEach(tasks => { %>
+        <option value="<%=employee.id%>">
+          <%=employee.firstName%>
+        </option>
+        <% }) %>
+      </select>
+                </div>
+                <button type="submit">Submit</button>
+                <button type="cancel"> <a href="/employees">Cancel</a></button></a>
+            </form>
+</body>
+
+</html>
