@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Tasks.associate = function (models) {
     // associations can be defined here
-    Tasks.belongsTo(models.Employee);
+    //Tasks.belongsTo(models.Employee);
   };
   return Tasks;
 };
