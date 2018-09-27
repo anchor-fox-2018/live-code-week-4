@@ -10,7 +10,9 @@ class Controller {
             .then(data => res.render('employees/employee', {
                 employees: data
             }))
-            .catch(err => console.log(err))
+            .catch(err => res.render('employees/employee', {
+                err
+            }))
     }
 
     static readOne(req, res) {
