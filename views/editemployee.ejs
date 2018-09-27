@@ -1,0 +1,13 @@
+<h1>Edit Employee <%= employeeData.dataValues.firstName%></h1>
+
+<form method="POST" action="/employees/<%= employeeData.dataValues.id%>/edit">
+    First name:<br>
+    <input type="text" name="firstName" value=<%=employeeData.dataValues.firstName%>><br>
+    Last name:<br>
+    <input type="text" name="lastName" value=<%=employeeData.dataValues.lastName%>><br>
+    Email:<br>
+    <input type="text" name="email" value=<%=employeeData.dataValues.email%>><br>
+    Point:<br>
+    <input type="text" name="totalPoints" value=<%=employeeData.dataValues.totalPoints%>><br><br>
+    <button type="submit">Edit Employee</button>
+</form>

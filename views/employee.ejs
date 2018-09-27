@@ -1,0 +1,33 @@
+<h1>Employee</h1>
+<table style="width:100%">
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Total Point</th>
+        <th>Joined At</th>
+        <th>Actions</th>
+    </tr>
+    <%employeeData.forEach(element => {%>
+    <tr>
+        <th>
+            <%=element.firstName%>
+        </th>
+        <th>
+            <%=element.lastName%>
+        </th>
+        <th>
+            <%=element.email%>
+        </th>
+        <th>
+            <%=element.totalPoints%>
+        </th>
+        <th>
+            <%=element.createdAt.toLocaleString()%>
+        </th>
+        <th>
+            <a href="/employees/<%=element.id%>/edit">EDIT</a> | <a href="/employees/<%=element.id%>/delete">DELETE</a>
+        </th>
+    </tr>
+    <%})%>
+</table>

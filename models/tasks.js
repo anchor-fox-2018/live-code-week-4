@@ -2,13 +2,22 @@
 module.exports = (sequelize, DataTypes) => {
   const Tasks = sequelize.define('Tasks', {
     title: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     },
     description: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     points: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      validate: {
+        isNumeric: true
+      }
+    },
+    EmployeeId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     },
     isComplete: {
       type: DataTypes.BOOLEAN,

@@ -1,0 +1,34 @@
+<h1>Tasks</h1>
+<table style="width:100%">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Points</th>
+        <th>Emplyee Name</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    <%TaskData.forEach(element => {%>
+    <tr>
+        <th>
+            <%=element.firstName%>
+        </th>
+        <th>
+            <%=element.lastName%>
+        </th>
+        <th>
+            <%=element.email%>
+        </th>
+        <th>
+            <%=element.totalPoints%>
+        </th>
+        <th>
+            <%=element.createdAt.toLocaleString()%>
+        </th>
+        <th>
+            <a href="/tasks/<%=element.id%>/edit">Complete</a> | <a href="/tasks/<%=element.id%>/delete">DELETE</a>
+        </th>
+    </tr>
+    <%})%>
+</table>
